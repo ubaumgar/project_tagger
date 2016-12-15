@@ -685,6 +685,10 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="746" height="451"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <value key="minSize" type="size" width="746" height="451"/>
+            <value key="maxSize" type="size" width="746" height="451"/>
+            <value key="minFullScreenContentSize" type="size" width="746" height="451"/>
+            <value key="maxFullScreenContentSize" type="size" width="746" height="451"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="746" height="451"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -942,9 +946,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6P-Co-Brf">
-                        <rect key="frame" x="15" y="117" width="135" height="32"/>
+                        <rect key="frame" x="15" y="117" width="136" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Generate String and Copy to Clipboard" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tzr-1g-0mE">
+                        <buttonCell key="cell" type="push" title="Generate String" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tzr-1g-0mE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

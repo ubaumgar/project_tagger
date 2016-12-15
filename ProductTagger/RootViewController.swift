@@ -39,9 +39,22 @@ class RootViewController: NSViewController {
     @IBOutlet weak var interestValue7: NSSlider!
     @IBOutlet weak var interestValue8: NSSlider!
     
+    /*var interests: [NSPopUpButton]
+    var interestValues: Array<NSSlider> = Array<NSSlider>()*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        /*interests[0] = interest1
+        interests[1] = interest2
+        interests[2] = interest3
+        interests[3] = interest4
+        interests[4] = interest5
+        interests[5] = interest6
+        interests[6] = interest7
+        interests[7] = interest8*/
+        
     }
     
     override func awakeFromNib() {
