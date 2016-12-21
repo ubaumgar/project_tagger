@@ -39,22 +39,30 @@ class RootViewController: NSViewController {
     @IBOutlet weak var interestValue7: NSSlider!
     @IBOutlet weak var interestValue8: NSSlider!
     
-    /*var interests: [NSPopUpButton]
-    var interestValues: Array<NSSlider> = Array<NSSlider>()*/
-    
+    var interests: [NSPopUpButton] = []
+    var interestValues: [NSSlider] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
-        /*interests[0] = interest1
-        interests[1] = interest2
-        interests[2] = interest3
-        interests[3] = interest4
-        interests[4] = interest5
-        interests[5] = interest6
-        interests[6] = interest7
-        interests[7] = interest8*/
+        interests.append(interest1)
+        interests.append(interest2)
+        interests.append(interest3)
+        interests.append(interest4)
+        interests.append(interest5)
+        interests.append(interest6)
+        interests.append(interest7)
+        interests.append(interest8)
         
+        interestValues.append(interestValue1)
+        interestValues.append(interestValue2)
+        interestValues.append(interestValue3)
+        interestValues.append(interestValue4)
+        interestValues.append(interestValue5)
+        interestValues.append(interestValue6)
+        interestValues.append(interestValue7)
+        interestValues.append(interestValue8)
     }
     
     override func awakeFromNib() {
@@ -63,14 +71,9 @@ class RootViewController: NSViewController {
         manPercentTextField.stringValue = "50"
         womanPercentTextField.stringValue = "50"
         
-        fillPopUpButton(button: interest1)
-        fillPopUpButton(button: interest2)
-        fillPopUpButton(button: interest3)
-        fillPopUpButton(button: interest4)
-        fillPopUpButton(button: interest5)
-        fillPopUpButton(button: interest6)
-        fillPopUpButton(button: interest7)
-        fillPopUpButton(button: interest8)
+        for popUpButton in interests {
+            fillPopUpButton(button: popUpButton)
+        }
     }
     
     func fillPopUpButton(button: NSPopUpButton)
@@ -126,29 +129,10 @@ class RootViewController: NSViewController {
         if (age36_50CheckBox.state == NSOnState) { resultString += ", gf_age:36_50" }
         if (age50CheckBox.state == NSOnState) { resultString += ", gf_age:50" }
         
-        if (interestValue1.intValue > 0 && !(interest1.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest1.selectedItem?.title)!, interestValue1.intValue)
-        }
-        if (interestValue2.intValue > 0 && !(interest2.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest2.selectedItem?.title)!, interestValue2.intValue)
-        }
-        if (interestValue3.intValue > 0 && !(interest3.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest3.selectedItem?.title)!, interestValue3.intValue)
-        }
-        if (interestValue4.intValue > 0 && !(interest4.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest4.selectedItem?.title)!, interestValue4.intValue)
-        }
-        if (interestValue5.intValue > 0 && !(interest5.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest5.selectedItem?.title)!, interestValue5.intValue)
-        }
-        if (interestValue6.intValue > 0 && !(interest6.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest6.selectedItem?.title)!, interestValue6.intValue)
-        }
-        if (interestValue7.intValue > 0 && !(interest7.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest7.selectedItem?.title)!, interestValue7.intValue)
-        }
-        if (interestValue8.intValue > 0 && !(interest8.selectedItem?.title.isEmpty)!) {
-            resultString += String(format: ", %@:%d", (interest8.selectedItem?.title)!, interestValue8.intValue)
+        for i in 0...7 {
+            if (interestValues[i].intValue > 0 && !(interests[i].selectedItem?.title.isEmpty)!) {
+                resultString += String(format: ", %@:%d", (interests[i].selectedItem?.title)!, interestValues[i].intValue)
+            }
         }
         
         resultTextField.stringValue = resultString
@@ -169,26 +153,12 @@ class RootViewController: NSViewController {
         age19_35CheckBox.state = NSOffState
         age36_50CheckBox.state = NSOffState
         age50CheckBox.state = NSOffState
-        
-        interest1.selectItem(at: 0)
-        interest2.selectItem(at: 0)
-        interest3.selectItem(at: 0)
-        interest4.selectItem(at: 0)
-        interest5.selectItem(at: 0)
-        interest6.selectItem(at: 0)
-        interest7.selectItem(at: 0)
-        interest8.selectItem(at: 0)
-        
-        interestValue1.intValue = 0
-        interestValue2.intValue = 0
-        interestValue3.intValue = 0
-        interestValue4.intValue = 0
-        interestValue5.intValue = 0
-        interestValue6.intValue = 0
-        interestValue7.intValue = 0
-        interestValue8.intValue = 0
+ 
+        for i in 0...7 {
+            interests[i].selectItem(at: 0)
+            interestValues[i].intValue = 0
+        }
         
         resultTextField.stringValue = ""
     }
-    
 }
